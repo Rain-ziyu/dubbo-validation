@@ -1,0 +1,26 @@
+dubbo:
+  application:
+    name: consumer
+#    开启序列化为WARN级别   3.2.x之后Dubbo开启了序列化的类检查级别默认为STRICT 不允许异常类的反序列化
+    serialize-check-status: WARN
+    trust-serialize-class-level: 3
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    #  配置注册中心
+    address: nacos://huayu.asia:8848
+    use-as-config-center: false  #dubbo 不使用nacos作为配置中心
+
+server:
+  port: 9999
+
+spring:
+  application:
+    name: consumer
+  #配置中心
+  cloud:
+    # 注册中心配置
+    nacos:
+      discovery:
+        server-addr: huayu.asia:8848

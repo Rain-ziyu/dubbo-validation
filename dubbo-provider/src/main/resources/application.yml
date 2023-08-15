@@ -1,0 +1,26 @@
+dubbo:
+  application:
+    name: provider
+#    只进行接口级别的注册 instance
+#    只进行服务级别的注册 interface
+    register-mode: all
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    #  配置注册中心
+    address: nacos://huayu.asia:8848
+    use-as-config-center: false  #dubbo 不使用nacos作为配置中心
+
+
+server:
+  port: 8888
+spring:
+  application:
+    name: consumer
+  #配置中心
+  cloud:
+    # 注册中心配置
+    nacos:
+      discovery:
+        server-addr: huayu.asia:8848
