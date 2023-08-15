@@ -4,8 +4,10 @@ dubbo:
 #    只进行接口级别的注册 instance
 #    只进行服务级别的注册 interface
     register-mode: all
+  provider:
+    filter: -validation, customValidationFilter
   protocol:
-    name: dubbo
+    name: tri
     port: -1
   registry:
     #  配置注册中心

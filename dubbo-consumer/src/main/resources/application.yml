@@ -5,7 +5,7 @@ dubbo:
     serialize-check-status: WARN
     trust-serialize-class-level: 3
   protocol:
-    name: dubbo
+    name: tri
     port: -1
   registry:
     #  配置注册中心

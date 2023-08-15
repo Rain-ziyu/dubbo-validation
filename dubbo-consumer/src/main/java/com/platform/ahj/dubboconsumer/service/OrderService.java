@@ -22,14 +22,7 @@ public class OrderService {
     private UserService userService;
 
     public String getOrder() {
-        // 测试参数校验
-        String s = null;
-        try {
-            s = userService.verifyUserPhoneNumber(new User());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        log.info("验证参数的方法返回的是：{}",s);
+
         // 测试单向流
         userService.sayHelloServerStream("hhh", new StreamObserver<String>() {
             @Override
@@ -69,6 +62,19 @@ public class OrderService {
         stringStreamObserver.onNext("2");
         stringStreamObserver.onNext("3");
         stringStreamObserver.onCompleted();
-        return userService.getUser();
+        // 测试参数校验
+        String s = null;
+        try {
+            s = userService.verifyUserPhoneNumber(new User());
+        } catch (Exception e) {
+            // 不会出现异常而是s
+            throw new RuntimeException(e);
+        }
+        log.info("验证参数的verifyUserPhoneNumber方法返回的是：{}",s);
+        String s1 = userService.getUser(new User());
+        log.info("验证参数的getUser方法返回的是：{}",s1);
+        String s2 = userService.setUser(new User());
+        log.info("验证参数的setUser方法返回的是：{}",s2);
+        return "wwl";
     }
 }

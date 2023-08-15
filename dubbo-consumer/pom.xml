@@ -32,7 +32,7 @@
     </dependency>
     <dependency>
         <groupId>org.apache.dubbo</groupId>
-        <artifactId>dubbo-rpc-dubbo</artifactId>
+        <artifactId>dubbo-rpc-triple</artifactId>
     </dependency>
     <dependency>
         <groupId>com.alibaba.cloud</groupId>
