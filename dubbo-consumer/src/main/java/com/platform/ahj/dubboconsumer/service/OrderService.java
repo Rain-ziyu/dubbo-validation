@@ -18,7 +18,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
     // 进行调用方参数校验   提供方参数校验其参数异常无法正常序列化至调用方
-    @DubboReference(version = "2.0")
+    @DubboReference(version = "2.0"
+            // ,validation = "true"
+    )
     private UserService userService;
 
     public String getOrder() {
